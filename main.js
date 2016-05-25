@@ -9,13 +9,19 @@
 
     // blockが呼び出された時に呼ばれる関数を登録する。
     // 下にあるdescriptorでブロックと関数のひも付けを行っている。
-    ext.do_domething = function(str) {
+    ext.do_something = function(str) {
+      alert("aaa");
+    };
+
+    ext.log = function(str) {
+      alert(str);
     };
 
     // ブロックと関数のひも付け
     var descriptor = {
         blocks: [
-            [' ', 'do_something %s', 'do_something', 'sample text'],
+            [' ', 'do_Something %s', 'do_something', 'sample text'],
+            [' ', 'log %s', 'log', 'sample log']
         ]
     };
 
